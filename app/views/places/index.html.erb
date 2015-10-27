@@ -4,5 +4,11 @@
 		<i><%= place.address %></i><br /><br />
 		<p><%= place.description %></p><br />
 	</div>
-
 <% end %>
+
+<div class="text-center">
+	<!--render page links in the view: -->
+	<%= will_paginate @places %>
+</div>
+
+<br class="clr" />
