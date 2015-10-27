@@ -43,6 +43,10 @@ group :test, :development do
   gem 'pry-rails'
 end
 
+## simpleform
+
+gem 'simple_form'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
