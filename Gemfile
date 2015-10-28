@@ -39,9 +39,7 @@ gem 'will_paginate', '~> 3.0.6'
 
 
 ## pry gem 
-group :test, :development do
-  gem 'pry-rails'
-end
+gem 'pry-rails'
 
 ## simpleform
 gem 'simple_form'
