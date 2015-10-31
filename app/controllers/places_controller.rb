@@ -44,7 +44,6 @@ class PlacesController < ApplicationController
 		if 	@place.valid?
 			redirect_to root_path
 		else
-			# binding.pry
 			render :edit, :status => :unprocessable_entity
 		end
 	end
