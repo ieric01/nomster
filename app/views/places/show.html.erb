@@ -36,6 +36,10 @@
 
   <div class="pull-right">
   	<% if current_user && current_user == @place.user %>
+      <!-- Button trigger modal for Comment-->
+      <button class="btn btn-primary" data-toggle="modal" data-target="#myPhotoModal">
+        Add a photo
+      </button>
   		<%= link_to 'Edit', edit_place_path(@place), :class => 'btn btn-primary' %>
   		<%= link_to 'Destroy', place_path(@place), :method => :delete, :data => {:confirm => 'Are you sure you want to delete this?'}, :class => 'btn btn-danger' %>
   	<% end %>
@@ -99,29 +103,26 @@
   </button>
 
 
-   <!-- Button trigger modal for Photo-->
-  <button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myPhotoModal">
-    Add a photo
-  </button>
-
 </div> <!-- col -->
 <div class="clear"></div>
 
-<% @place.comments.each do |comment| %>
-  <div class="col-xs-12 col-sm-6">
-    <blockquote>
-      <% if comment.humanized_rating.present? %>
-        <b><%= comment.humanized_rating %></b> -
-      <% end %>
-      <%= comment.message %>
-      <small><%= comment.user.email %></small>
-    </blockquote>
-  </div> <!-- col -->
-<% end %>
+<div class="col-xs-10 col-xs-offset-1 comments-col">
+  <% @place.comments.each do |comment| %>
+    <div class="col-xs-12 col-sm-6">
+      <blockquote>
+        <% if comment.humanized_rating.present? %>
+          <b><%= comment.humanized_rating %></b> -
+        <% end %>
+        <%= comment.message %>
+        <small><%= comment.user.email %></small>
+      </blockquote>
+    </div> <!-- col -->
+  <% end %>
+
+</div><!-- col -->
 
 
-<% @place.photos.each do |photo| %>
-  <%= image_tag photo.picture %>
-  <%= photo.caption %>
-<% end %>
-
+  <% @place.photos.each do |photo| %>
+    <%=  image_tag photo.picture %>
+    <%= photo.caption %>
+  <% end %>
