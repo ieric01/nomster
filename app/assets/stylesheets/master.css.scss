@@ -62,6 +62,7 @@ blockquote {
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
 }
+
 blockquote:before {
   color: #ccc;
   content: open-quote;
@@ -70,6 +71,7 @@ blockquote:before {
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
+
 blockquote p {
   display: inline;
 }
@@ -77,4 +79,26 @@ blockquote p {
 
 .comments-col {
   padding-left: 0px;
+}
+
+.image_wrapper {
+  width: 50%;
+  background: white;
+  border-radius: 5px;
+  margin: 35px 0;
+}
+
+.img-thumbnail {
+  margin-bottom: 10px;
+}
+
+.img-thumbnail:hover {
+  transform: scale(1.75)
+}
+
+@media (max-width: 500px) {
+  #commentBtn {
+    margin-top: 10px;
+    float: left !important;
+  }
 }

@@ -4,6 +4,7 @@
   <br/><br/>
   <p><%= @place.description %></p>
 
+
   <% if @place.longitude.present? && @place.latitude.present? %>
 
     <script>
@@ -47,6 +48,22 @@
 </div> <!-- booyah-box -->
 
 <div class="clear"></div>
+
+  <% if @place.photos.present? %>
+    <div class="col-xs-10 col-xs-offset-1">
+      <h1 class="pull-left">Photos</h1>
+      <div class="clear"></div>
+      <!-- Photos display -->
+       <% @place.photos.each do |photo| %>
+       <div class= "col-xs-12 col-sm-3">
+          <div class="image_wrapper">
+            <%= image_tag photo.picture, :class =>"img-responsive img-thumbnail" %>
+            <h4> <%= photo.caption %> </h4>
+          </div>  
+       </div><!-- col -->
+      <% end %>
+    </div> <!-- col -->
+  <% end %>
 
 <!-- Modal for Comment -->
 <div class="modal fade" id="myCommentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -98,7 +115,7 @@
 <div class="col-xs-10 col-xs-offset-1">
   <h1 class="pull-left">Comments</h1>
   <!-- Button trigger modal for Comment-->
-  <button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myCommentModal">
+  <button class="btn btn-primary btn-lg pull-right" id="commentBtn" data-toggle="modal" data-target="#myCommentModal">
     Add a comment
   </button>
 
@@ -122,7 +139,4 @@
 </div><!-- col -->
 
 
-  <% @place.photos.each do |photo| %>
-    <%=  image_tag photo.picture %>
-    <%= photo.caption %>
-  <% end %>
+
