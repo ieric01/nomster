@@ -4,7 +4,7 @@
 		<i><%= place.address %></i><br /><br />
 		<% if place.photos.present? %>
 			<div class="index-page-image-wrapper">
-				<%= image_tag place.photos.last.picture, :class => 'place-img img-responsive'%>
+				<%= image_tag place.photos.last.picture, :class => 'place-img'%>
 			</div>
 		<% end %><br />
 		<p><%= place.description %></p><br />
