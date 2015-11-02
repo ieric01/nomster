@@ -3,8 +3,10 @@
 		<h1><%= link_to place.name, place_path(place) %></h1><br />
 		<i><%= place.address %></i><br /><br />
 		<% if place.photos.present? %>
-			<%= image_tag place.photos.last.picture, :class => 'img-responsive'%>
-		<% end %>
+			<div class="index-page-image-wrapper">
+				<%= image_tag place.photos.last.picture, :class => 'place-img img-responsive'%>
+			</div>
+		<% end %><br />
 		<p><%= place.description %></p><br />
 
 		<% if place.user.present? %>

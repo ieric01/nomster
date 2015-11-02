@@ -96,6 +96,18 @@ blockquote p {
   transform: scale(1.75)
 }
 
+.index-page-image-wrapper {
+  height: 50%;
+  width: 50%;
+}
+
+.place-img{
+  height: 100%;
+  width: 100%;
+  border-radius: 2%;
+  // box-shadow: 2px 2px 2px black;
+}
+
 @media (max-width: 500px) {
   #commentBtn {
     margin-top: 10px;
