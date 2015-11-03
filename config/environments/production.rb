@@ -8,6 +8,7 @@ Nomster::Application.configure do
     :domain         => 'yourapp.heroku.com',
     :authentication => :plain,
   }
+  
   ActionMailer::Base.delivery_method = :smtp
 
     config.action_mailer.default_url_options = { :host => 'nomster-eric-orellana.herokuapp.com' }
